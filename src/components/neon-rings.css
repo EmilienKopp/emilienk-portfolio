@@ -1,0 +1,149 @@
+.neon-ring {
+    content: " ";
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: transparent;
+    filter: blur(0.8px);
+}
+
+.neon-ring.border-left {
+    border-left-width: 4px;
+}
+
+.neon-ring.border-top {
+    border-top-width: 4px;
+}
+
+.neon-ring.border-right {
+    border-right-width: 4px;
+}
+
+.neon-ring.red {
+    border-color: rgb(176, 16, 17, 0.9);
+}
+
+.neon-ring.green {
+    border-color: rgb(37, 236, 19);
+}
+
+.neon-ring.blue {
+    border-color: rgb(41, 22, 206, 0.9);
+}
+
+.neon-ring.clockwise {
+    animation-name: clockwise;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.neon-ring.counter-clockwise {
+    animation-name: counter-clockwise;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.neon-ring.fast {
+    animation-duration: 3.5s;
+}
+
+.neon-ring.normal {
+    animation-duration: 4s;
+}
+
+.neon-ring.slow {
+    animation-duration: 4.5s;
+}
+
+.container .neon-ring.bottom-left {
+    top: 0;
+    left: 0;
+}
+
+.container .neon-ring.top {
+    top: -66.66px;
+    left: -100px;
+}
+
+.container .neon-ring.bottom-right {
+    left: -210px;
+}
+
+
+/* Star */
+.neon-ring.clockwise::before {
+    pointer-events: none;
+    content: " ";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(176, 16, 17);
+    box-shadow: 0 0 1px 5px rgba(176, 16, 17, 0.3), 0 0 2px 10px rgba(176, 16, 17, 0.2), 0 0 3px 20px rgb(176, 16, 17, 0.1), 0 0 20px rgb(176, 16, 17), 0 0 40px rgb(176, 16, 17);
+}
+
+.neon-ring.counter-clockwise::before {
+    pointer-events: none;
+    content: " ";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(176, 16, 17);
+    box-shadow: 0 0 1px 5px rgba(176, 16, 17, 0.3), 0 0 2px 10px rgba(176, 16, 17, 0.2), 0 0 3px 20px rgb(176, 16, 17, 0.1), 0 0 20px rgb(176, 16, 17), 0 0 40px rgb(176, 16, 17);
+}
+
+.neon-ring.red::before {
+    background-color: rgb(176, 16, 17);
+    box-shadow: 0 0 1px 5px rgba(176, 16, 17, 0.3), 0 0 2px 10px rgba(176, 16, 17, 0.2), 0 0 3px 20px rgb(176, 16, 17, 0.1), 0 0 20px rgb(176, 16, 17), 0 0 40px rgb(176, 16, 17);
+}
+
+.neon-ring.blue::before {
+    background-color: rgb(41, 22, 206);
+    box-shadow: 0 0 1px 5px rgba(41, 22, 206, 0.3), 0 0 2px 10px rgba(41, 22, 206, 0.2), 0 0 3px 20px rgb(41, 22, 206, 0.1), 0 0 20px rgb(41, 22, 206), 0 0 40px rgb(41, 22, 206);
+}
+
+.neon-ring.green::before {
+    background-color: rgb(37, 236, 19);
+    box-shadow: 0 0 1px 5px rgba(37, 236, 19, 0.3), 0 0 2px 10px rgba(37, 236, 19, 0.2), 0 0 3px 20px rgb(37, 236, 19, 0.1), 0 0 20px rgb(37, 236, 19), 0 0 40px rgb(37, 236, 19);
+}
+
+
+.neon-ring.clockwise.border-left::before {
+    top: -6px;
+    left: 48px;
+}
+
+.neon-ring.clockwise.border-top::before {
+    top: 48px;
+    right: -6px;
+}
+
+.neon-ring.counter-clockwise.border-right::before {
+    top: -6px;
+    right: 49px;
+}
+
+
+
+
+@keyframes counter-clockwise {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,32 @@
+---
+import Squares from '../layouts/Squares.astro';
+import AnimationsGallery from '../components/AnimationsGallery.svelte';
+
+interface Frontmatter {
+    title: string;
+    description?: string;
+}
+
+let simpleHeartControls = {
+
+}
+
+---
+
+<Squares title="Animations Gallery">
+    <div id="gridWrapper" 
+    class="p-8 max-w-5xl grid gap-8 sm:grid-cols-2">
+        <h1 class="sm:col-span-2 sm:grid sm:grid-cols-2 sm:gap-4">
+            <span class="text-4xl sm:col-span-2">Gallery of my animations</span>
+        </h1>
+
+		<AnimationsGallery client:idle/>
+
+    </div>
+</Squares>
+
+<style>
+	body {
+		font-family: 'Raleway', sans-serif;
+	}
+</style>
