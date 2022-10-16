@@ -23,7 +23,11 @@
         document.addEventListener('keyup', (e) => {
             if(e.shiftKey) {
                 if(e.key == 'Backspace') {
+                    e.preventDefault();
                     silentInput = silentInput.slice(0,-1)
+                } else if (e.key == 'Enter') {
+                    e.preventDefault();
+                    silentInput = '';
                 } else {
                     silentInput += e.key;
                 }
@@ -79,6 +83,13 @@
             {/if}
             <rect id="eyes" on:click={ toggleSunglasses } class="cls-1" x="504.46" y="367.38" width="312.5" height="128.25"/>
           </svg>
+          
+            {#if silentInput.length > 0}
+            <div class="bubble" contenteditable="true">
+                {silentInput}
+            </div>
+            {/if}
+          
         {/if}
     </div>
 </div>
@@ -103,6 +114,22 @@
 
     #eyes {
         cursor: pointer;
+    }
+
+    .bubble {
+        position: absolute;
+        top: 10%;
+        right: 20%;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+
+        justify-content: center;
+        align-items: center;
+        z-index: 6000;
     }
 
     .commands-list {
