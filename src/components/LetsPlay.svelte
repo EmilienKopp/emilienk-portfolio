@@ -2,7 +2,7 @@
     export let show = false;
 </script>
 
-<a on:click={() => {show = !show} } class="button-2 w-button glow-hover">Let&#x27;s play (?)</a>
+<a on:click={() => {show = !show} } class="button-2 w-button glow-hover">DON'T PRESS THIS</a>
 
 {#if show}
     <div id="controls" class="fixed bottom-2 right-2 text-sm text-left p-2 opacity-70 bg-white">
@@ -25,18 +25,22 @@
 
 #controls {
     z-index: 9999;
+    font-weight: 600;
 }
 
 .glow-hover {
-    width: 180px;
+    width: 190px;
     height: 50px;
     border: 1px solid #fff;
     outline: none;
     color: #FFFFFF;
+    font-weight: 700;
     background-color: #111111;
     cursor: pointer;
     position: relative;
     border-radius: 10px;
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
 }
 
 .glow-hover:before {

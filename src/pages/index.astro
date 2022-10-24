@@ -3,6 +3,8 @@ import InteractiveImage from "../components/InteractiveImage.svelte";
 import CodeBox from "../components/CodeBox.svelte";
 import LetsPlay from "../components/LetsPlay.svelte";
 import LetsWork from "../components/LetsWork.svelte";
+import AnimatedSVGTitle from "../components/AnimatedSVGTitle.svelte";
+
 ---
 
 <!DOCTYPE html>
@@ -71,14 +73,14 @@ import LetsWork from "../components/LetsWork.svelte";
 			role="banner"
 			class="navigation w-nav"
 		>
-			<a href="index.html" aria-current="page" class="link w--current"
-				>Emilien</a
-			>
+			<a href="/" aria-current="page" class="link w--current">
+				<img src="images/abroads-modern.png" width="100" alt="Abroads Logo" />
+			</a>
 			<div class="navigation-items">
 				<div class="navigation-wrap">
 					<nav role="navigation" class="navigation-items w-nav-menu">
 						<a
-							href="index.html"
+							href="/"
 							aria-current="page"
 							class="navigation-item w-nav-link w--current"
 							>Home</a
@@ -91,9 +93,12 @@ import LetsWork from "../components/LetsWork.svelte";
 							class="navigation-item w-nav-link">Projects</a
 						>
 						<a
-						href="gallery.html"
-						class="navigation-item w-nav-link">Gallery</a
-					>
+							href="gallery.html"
+							class="navigation-item w-nav-link">Gallery</a
+						>
+						<a href="about.html" class="navigation-item w-nav-link"
+							>What is 'Abroads' ?</a
+						>
 					</nav>
 					<div class="menu-button w-nav-button">
 						<img
@@ -108,12 +113,12 @@ import LetsWork from "../components/LetsWork.svelte";
 		</div>
 		<div class="hero-section wf-section">
 			<div class="container-2 w-container">
-				
+				<h2 class="heading-4"><span class="text-span-3">Hi, I'm Emilien</span></h2>
 				<h1
 					id="w-node-b35be113-fd11-70bf-ddb4-0adec5028d02-cc63c3b4"
 					class="heading-3"
 				>
-					Full-stack <br />web <br />developer
+				<AnimatedSVGTitle  width={400} client:load />
 				</h1>
 				<h2 class="heading-4">
 					Working with people and small businesses that need <span class="text-span-3">someone who listens.</span>
@@ -130,7 +135,7 @@ import LetsWork from "../components/LetsWork.svelte";
 			<CodeBox client:idle />
 			<InteractiveImage client:load />
 		</div>
-
+		
 		<div class="section">
 			<div class="container">
 				<div class="intro-wrap"></div>

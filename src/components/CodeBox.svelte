@@ -9,6 +9,7 @@
     onMount(() => {
         const code = typingBlock.textContent;
         document.addEventListener('keypress', (e) => {
+            if( document.activeElement === document.getElementById('chatInput') ) return;
             if(e.key == 'f') {
                 foreground = !foreground;
             }
